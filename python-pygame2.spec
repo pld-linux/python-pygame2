@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%%doc WHATSNEW docs/*
+%doc NEWS.txt PKG-INFO README.txt TODO.txt doc/*
 %dir %{py_sitedir}/%{module}
 %attr(755,root,root) %{py_sitedir}/%{module}/*.so
 %{py_sitedir}/%{module}/*.py[co]
