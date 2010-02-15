@@ -27,6 +27,7 @@ Source0:	http://pygame.googlecode.com/files/%{module}-%{version}-%{_alpha}.tar.g
 # Source0-md5:	41a676337f9fbf39fd0a47c485e3ac47
 URL:		http://www.pygame.org/
 BuildRequires:	SDL-devel
+BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel >= 2.0
