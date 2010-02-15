@@ -1,22 +1,30 @@
 #
 # TODO: - unpackaged files:
-#		_site-packages/pygame/docs/*
+#		_site-packages/pygame/dll/*
 #		_site-packages/pygame/examples/*
-#		_site-packages/pygame/gp2x/*
-#		_site-packages/pygame/tests/*
+#		_site-packages/pygame/freetype/*
+#		_site-packages/pygame/sdl/*
+#		_site-packages/pygame/sdltext/*
+#		_site-packages/pygame/sdlglx/*
+#		_site-packages/pygame/sdlimage/*
+#		_site-packages/pygame/sdlmixer/*
+#		_site-packages/pygame/sdlttf/*
+#		_site-packages/pygame/sprite/*
+#		_site-packages/pygame/test/*
 #
 
-%define		module	pygame
+%define		module	pygame2
+%define		_alpha	alpha3
 
 Summary:	Python modules designed for writing games
 Summary(pl.UTF-8):	Moduły Pythona dla piszących gry
 Name:		python-%{module}
-Version:	1.9.1
-Release:	3
+Version:	2.0.0
+Release:	0.%{_alpha}.1
 License:	LGPL v2.1+
 Group:		Libraries/Python
-Source0:	http://www.pygame.org/ftp/pygame-%{version}release.tar.gz
-# Source0-md5:	1c4cdc708d17c8250a2d78ef997222fc
+Source0:	http://pygame.googlecode.com/files/%{module}-%{version}-%{_alpha}.tar.gz
+# Source0-md5:	41a676337f9fbf39fd0a47c485e3ac47
 URL:		http://www.pygame.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
@@ -31,6 +39,7 @@ BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	smpeg-devel
+Obsoletes:	python-pygame
 %pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,6 +62,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe języka C modułów pygame
 Group:		Development/Languages/Python
 %pyrequires_eq	python
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	python-pygame-devel
 
 %description devel
 C header files for pygame modules.
@@ -61,7 +71,7 @@ C header files for pygame modules.
 Pliki nagłówkowe języka C modułów pygame.
 
 %prep
-%setup -q -n %{module}-%{version}release
+%setup -q -n %{module}-%{version}-%{_alpha}
 
 %build
 CFLAGS="%{rpmcflags} -I/usr/include/smpeg"; export CFLAGS
@@ -85,9 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc WHATSNEW docs/*
+#%%doc WHATSNEW docs/*
 %dir %{py_sitedir}/%{module}
-%{py_sitedir}/%{module}/*.ttf
 %attr(755,root,root) %{py_sitedir}/%{module}/*.so
 %{py_sitedir}/%{module}/*.py[co]
 %dir %{py_sitedir}/%{module}/threads/
