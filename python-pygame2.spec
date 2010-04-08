@@ -14,7 +14,7 @@
 #
 
 %define		module	pygame2
-%define		_alpha	alpha3
+%define		_alpha	alpha4
 
 Summary:	Python modules designed for writing games
 Summary(pl.UTF-8):	Moduły Pythona dla piszących gry
@@ -24,12 +24,12 @@ Release:	0.%{_alpha}.1
 License:	LGPL v2.1+
 Group:		Libraries/Python
 Source0:	http://pygame.googlecode.com/files/%{module}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	41a676337f9fbf39fd0a47c485e3ac47
+# Source0-md5:	d675fc541eae1e3b7f104e471ce412a5
 URL:		http://www.pygame.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel
-BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_mixer-devel >= 1.2.10
 BuildRequires:	SDL_ttf-devel >= 2.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
