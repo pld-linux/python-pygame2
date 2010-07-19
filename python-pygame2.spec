@@ -14,7 +14,7 @@
 #
 
 %define		module	pygame2
-%define		_alpha	alpha4
+%define		_alpha	alpha5
 
 Summary:	Python modules designed for writing games
 Summary(pl.UTF-8):	Moduły Pythona dla piszących gry
@@ -23,8 +23,8 @@ Version:	2.0.0
 Release:	0.%{_alpha}.1
 License:	LGPL v2.1+
 Group:		Libraries/Python
-Source0:	http://pygame.googlecode.com/files/%{module}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	d675fc541eae1e3b7f104e471ce412a5
+Source0:	http://pgreloaded.googlecode.com/files/%{module}-%{version}-%{_alpha}.tar.gz
+# Source0-md5:	9b79ae86fddb613e08cbdc8bc8b96a56
 URL:		http://www.pygame.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
