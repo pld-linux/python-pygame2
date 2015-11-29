@@ -38,7 +38,7 @@ BuildRequires:	python-numpy-devel
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	smpeg-devel
 Obsoletes:	python-pygame
 %pyrequires_eq	python
